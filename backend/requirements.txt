@@ -1,0 +1,20 @@
+# FastAPI 后端依赖
+
+# Web 框架
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# 目标检测
+ultralytics==8.0.195
+torch==2.1.1
+torchvision==0.16.1
+
+# 图像处理
+opencv-python==4.8.1.78
+Pillow==10.0.1
+numpy==1.24.3
+
+# 工具
+python-dotenv==1.0.0
+aiofiles==23.2.1

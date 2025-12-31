@@ -1,0 +1,87 @@
+# ==========================================
+# Python / Backend
+# ==========================================
+
+# 虚拟环境
+backend/venv/
+backend/env/
+*.virtualenv
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 模型文件（太大，不适合 Git）
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# 上传和输出目录（运行时生成）
+backend/uploads/
+backend/outputs/
+backend/temp/
+
+# 环境变量文件（包含敏感信息）
+.env
+.env.local
+.env.*.local
+
+# ==========================================
+# Node.js / Frontend
+# ==========================================
+
+# 依赖
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 编辑器缓存
+.cache/
+*.log
+
+# ==========================================
+# IDE / 编辑器
+# ==========================================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ==========================================
+# 系统文件
+# ==========================================
+
+Thumbs.db
+.DS_Store
+*.bak
+*.tmp
+
+# ==========================================
+# 测试和覆盖率
+# ==========================================
+
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# ==========================================
+# 临时文件
+# ==========================================
+
+*.log
+*.pid
+*.seed
+*.pid.lock
