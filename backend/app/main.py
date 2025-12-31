@@ -8,13 +8,14 @@ from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
 from app.api.routes import router
+from app.api.audit_routes import audit_router
 from app.core.config import settings
 
 # 创建 FastAPI 应用
 app = FastAPI(
-    title="目标检测 API",
-    description="基于 YOLOv8 的目标检测服务，支持图片和视频推理",
-    version="1.0.0",
+    title="Argus-IIoT 平台 API",
+    description="目标检测服务 + 微服务架构审计工具",
+    version="2.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
 )
@@ -41,15 +42,23 @@ app.mount("/outputs", StaticFiles(directory=settings.OUTPUT_DIR), name="outputs"
 
 # 注册路由
 app.include_router(router, prefix="/api")
+app.include_router(audit_router, prefix="/api/audit", tags=["Architecture Audit"])
 
 
 @app.get("/")
 async def root():
     """根路径"""
     return {
-        "message": "目标检测 API 服务",
+        "message": "Argus-IIoT 平台 API 服务",
+        "services": [
+            "Object Detection (YOLOv8)",
+            "Microservices Architecture Audit"
+        ],
         "docs": "/docs",
-        "health": "/api/health"
+        "health": {
+            "detection": "/api/health",
+            "audit": "/api/audit/health"
+        }
     }
 
 
