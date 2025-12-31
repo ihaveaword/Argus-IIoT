@@ -18,6 +18,9 @@
           <router-link to="/video" class="nav-link" :class="{ active: $route.path === '/video' }">
             🎬 视频检测
           </router-link>
+          <router-link to="/architecture" class="nav-link" :class="{ active: $route.path === '/architecture' }">
+            🏗️ 架构审计
+          </router-link>
         </nav>
       </div>
     </header>
