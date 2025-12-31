@@ -1,6 +1,22 @@
-# 🎯 目标检测可视化 Dashboard
+# 🎯 Argus-IIoT 平台
 
-基于 **FastAPI + Vue 3** 的前后端分离架构，使用 YOLOv8 进行目标检测。
+**FastAPI + Vue 3** 前后端分离架构，集成 **YOLOv8 目标检测** 和 **微服务架构审计工具**。
+
+## ✨ 功能特性
+
+### 1. 目标检测 (Object Detection)
+- 基于 YOLOv8 的图片和视频目标检测
+- 实时推理和结果可视化
+- 支持多种图片和视频格式
+
+### 2. 架构审计 (Architecture Audit) 🆕
+- **架构模式识别**: 自动检测 MVC、Hexagonal、Clean Architecture、DDD 等模式
+- **API 契约分析**: 分析 REST/gRPC/GraphQL API，生成一致性报告
+- **技术栈审计**: 审查数据库、消息队列、缓存等技术选型
+- **交互式报告**: 生成 HTML 报告，包含代码跳转链接和架构图
+- **ADR 模板**: 统一架构决策记录规范
+
+详细文档: [ARCHITECTURE_AUDIT.md](./ARCHITECTURE_AUDIT.md)
 
 ## 📁 项目结构
 

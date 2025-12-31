@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1 class="page-title">🎯 目标检测可视化平台</h1>
-    <p class="page-subtitle">基于 YOLOv8 的智能目标检测服务，支持图片和视频上传推理</p>
+    <h1 class="page-title">🎯 Argus-IIoT 平台</h1>
+    <p class="page-subtitle">目标检测 + 微服务架构审计 · 一站式 IIoT 解决方案</p>
     
     <!-- 状态卡片 -->
     <div class="status-card" :class="{ 'status-online': isOnline, 'status-offline': !isOnline }">
@@ -33,6 +33,18 @@
         <div class="feature-tags">
           <span class="tag">逐帧处理</span>
           <span class="tag">视频导出</span>
+        </div>
+      </router-link>
+      
+      <router-link to="/audit" class="card feature-card">
+        <div class="card-header">
+          <div class="card-icon">🏗️</div>
+          <h2 class="card-title">架构审计</h2>
+        </div>
+        <p class="feature-desc">全面扫描微服务架构，生成交互式报告，包含模式识别和技术栈分析</p>
+        <div class="feature-tags">
+          <span class="tag">架构分析</span>
+          <span class="tag">API审计</span>
         </div>
       </router-link>
     </div>
@@ -125,9 +137,15 @@ onMounted(async () => {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {

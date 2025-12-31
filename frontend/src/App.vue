@@ -32,7 +32,7 @@
     <!-- 页脚 -->
     <footer class="footer">
       <div class="container">
-        <p>目标检测可视化平台 · 基于 YOLOv8</p>
+        <p>Argus-IIoT 平台 · 目标检测 + 架构审计</p>
       </div>
     </footer>
   </div>
