@@ -4,8 +4,8 @@
     <header class="header">
       <div class="container header-content">
         <div class="logo">
-          <span class="logo-icon">🎯</span>
-          <span>目标检测 Dashboard</span>
+          <span class="logo-icon">👁️</span>
+          <span class="logo-text">Argus-IIoT</span>
         </div>
         
         <nav class="nav">
@@ -32,7 +32,7 @@
     <!-- 页脚 -->
     <footer class="footer">
       <div class="container">
-        <p>目标检测可视化平台 · 基于 YOLOv8</p>
+        <p>Argus-IIoT · 轻量级边缘云协同目标检测系统</p>
       </div>
     </footer>
   </div>

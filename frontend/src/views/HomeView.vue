@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1 class="page-title">🎯 目标检测可视化平台</h1>
-    <p class="page-subtitle">基于 YOLOv8 的智能目标检测服务，支持图片和视频上传推理</p>
+    <h1 class="page-title">Argus-IIoT 智能感知系统</h1>
+    <p class="page-subtitle">全天候、无死角的智能目标检测服务 · 轻量级边缘云协同平台</p>
     
     <!-- 状态卡片 -->
     <div class="status-card" :class="{ 'status-online': isOnline, 'status-offline': !isOnline }">

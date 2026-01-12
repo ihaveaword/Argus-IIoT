@@ -1,11 +1,16 @@
-# 🎯 目标检测可视化 Dashboard
+# 🎯 Argus-IIoT
 
-基于 **FastAPI + Vue 3** 的前后端分离架构，使用 YOLOv8 进行目标检测。
+> **"Argus Panoptes, the All-Seeing Guardian"**  
+> *Argus Panoptes* 是希腊神话中的"百眼巨人"，拥有一百只眼睛，哪怕在睡觉时也有眼睛睁着，是完美的监视者。**Argus-IIoT** 代表全天候、无死角的智能感知能力，象征系统对边缘侧数据的极致掌控。
+
+## 项目简介
+
+基于 **FastAPI + Vue 3** 的前后端分离架构，使用 YOLOv8 进行目标检测的轻量级边缘云协同系统。
 
 ## 📁 项目结构
 
 ```
-object-detection-dashboard/
+Argus-IIoT/
 ├── backend/                 # FastAPI 后端
 │   ├── app/
 │   │   ├── main.py          # 入口文件
@@ -33,46 +38,11 @@ object-detection-dashboard/
 └── README.md
 ```
 
-## � 团队协作设置
+## 🤝 团队协作
 
-### 首次克隆项目后的设置步骤
+> 📖 **详细协作指南**: 查看 [CONTRIBUTING.md](CONTRIBUTING.md)
 
-```bash
-# 1. 克隆仓库
-git clone <your-repo-url>
-cd Argus-IIoT
-
-# 2. 后端环境配置
-cd backend
-
-# 复制环境变量模板
-cp .env.example .env
-
-# 创建虚拟环境
-python3 -m venv venv
-source venv/bin/activate  # Mac/Linux
-# venv\Scripts\activate   # Windows
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 下载 YOLOv8 模型（首次运行会自动下载）
-# 或手动下载：wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt
-
-cd ..
-
-# 3. 前端环境配置
-cd frontend
-npm install
-cd ..
-```
-
-### ⚠️ 重要提醒
-- ✅ **不要提交**：虚拟环境 (`venv/`)、依赖包 (`node_modules/`)、模型文件 (`*.pt`)
-- ✅ **不要提交**：上传/输出目录 (`uploads/`, `outputs/`)、环境变量文件 (`.env`)
-- ✅ **要提交**：源代码、配置文件、README、.gitignore
-
-## �🚀 快速开始
+## 🚀 快速开始
 
 ### 1. 后端启动
 
@@ -91,6 +61,14 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
 ```
 
+### 快速启动后端
+
+```bash
+cd backend
+# 运行服务
+uvicorn app.main:app --reload --port 8000
+```
+
 后端 API 文档: http://localhost:8000/docs
 
 ### 2. 前端启动
@@ -101,6 +79,13 @@ cd frontend
 # 安装依赖
 npm install
 
+# 运行开发服务器
+npm run dev
+```
+
+### 快速启动前端
+```bash
+cd frontend
 # 运行开发服务器
 npm run dev
 ```

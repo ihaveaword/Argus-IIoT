@@ -94,6 +94,17 @@ class DetectorService:
     ) -> np.ndarray:
         """在图像上绘制检测结果"""
         annotated = image.copy()
+        img_height, img_width = image.shape[:2]
+        
+        # 根据图片尺寸按比例缩放，确保前端显示时标签占比一致
+        # 基准：800px 高度的图片使用 font_scale=1.5
+        # 这样无论原图多大，缩放到前端显示后，标签比例都一样
+        scale_factor = img_height / 800.0
+        
+        font_scale = 1.5 * scale_factor
+        font_thickness = max(2, int(2 * scale_factor))
+        box_thickness = max(2, int(3 * scale_factor))
+        padding = max(8, int(10 * scale_factor))
         
         for det in detections:
             x1, y1, x2, y2 = det["bbox"]
@@ -101,15 +112,17 @@ class DetectorService:
             conf = det["confidence"]
             
             # 绘制矩形框（绿色）
-            cv2.rectangle(annotated, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.rectangle(annotated, (x1, y1), (x2, y2), (0, 255, 0), box_thickness)
             
             # 绘制标签背景
             label = f"{class_name} {conf:.2f}"
-            label_size, _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 1)
+            label_size, _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, font_scale, font_thickness)
+            
+            # 标签背景框
             cv2.rectangle(
                 annotated,
-                (x1, y1 - label_size[1] - 4),
-                (x1 + label_size[0], y1),
+                (x1, y1 - label_size[1] - padding),
+                (x1 + label_size[0] + padding, y1),
                 (0, 255, 0),
                 -1
             )
@@ -118,11 +131,11 @@ class DetectorService:
             cv2.putText(
                 annotated,
                 label,
-                (x1, y1 - 2),
+                (x1 + padding // 2, y1 - padding // 2),
                 cv2.FONT_HERSHEY_SIMPLEX,
-                0.6,
-                (0, 0, 0),
-                1
+                font_scale,
+                (0, 0, 0),  # 黑色文字
+                font_thickness
             )
         
         return annotated

@@ -12,8 +12,8 @@ from app.core.config import settings
 
 # 创建 FastAPI 应用
 app = FastAPI(
-    title="目标检测 API",
-    description="基于 YOLOv8 的目标检测服务，支持图片和视频推理",
+    title="Argus-IIoT API",
+    description="轻量级边缘云协同目标检测系统 - 基于 YOLOv8 的全天候智能感知服务",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
@@ -47,7 +47,7 @@ app.include_router(router, prefix="/api")
 async def root():
     """根路径"""
     return {
-        "message": "目标检测 API 服务",
+        "message": "Argus-IIoT API 服务",
         "docs": "/docs",
         "health": "/api/health"
     }
