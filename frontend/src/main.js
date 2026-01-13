@@ -19,6 +19,11 @@ const routes = [
         path: '/video',
         name: 'video',
         component: () => import('./views/VideoDetection.vue')
+    },
+    {
+        path: '/architecture',
+        name: 'architecture',
+        component: () => import('./views/ArchitectureAudit.vue')
     }
 ]
 
